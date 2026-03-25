@@ -2,11 +2,13 @@ name: Build APK
 
 on:
 push:
-branches: [ "main" ]
+branches:
+- main
 
 jobs:
 build:
 runs-on: ubuntu-latest
+
 
 steps:
   - name: Repo auschecken
@@ -26,8 +28,8 @@ steps:
   - name: Java installieren
     uses: actions/setup-java@v4
     with:
-      distribution: 'temurin'
-      java-version: '17'
+      distribution: temurin
+      java-version: 17
 
   - name: Gradle Build
     run: |
@@ -40,3 +42,4 @@ steps:
     with:
       name: app-debug
       path: android/app/build/outputs/apk/debug/app-debug.apk
+
