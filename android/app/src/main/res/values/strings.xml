@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Intervall Alarm</string>
+    <string name="title_activity_main">Intervall Alarm</string>
+    <string name="package_name">com.intervallalarm.app</string>
+    <string name="custom_url_scheme">com.intervallalarm.app</string>
+</resources>

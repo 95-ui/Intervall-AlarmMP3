@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom range slider styling */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-track {
+  height: 8px;
+  border-radius: 4px;
+  background: #334155;
+}
+
+input[type='range']::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+  background: #334155;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #f59e0b;
+  margin-top: -8px;
+  border: 3px solid #1e293b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+  transition: box-shadow 0.2s;
+}
+
+input[type='range']::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #f59e0b;
+  border: 3px solid #1e293b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+  transition: box-shadow 0.2s;
+}
+
+input[type='range']:active::-webkit-slider-thumb {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.7);
+}
+
+/* Custom select styling */
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px !important;
+}
+
+select option {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+/* Custom number input - hide spinners */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 1;
+  height: 32px;
+}
+
+/* Animation keyframes */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.6));
+  }
+}
+
+@keyframes alarmFlash {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.animate-alarm-flash {
+  animation: alarmFlash 0.5s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+/* Prevent pull-to-refresh on mobile */
+html, body {
+  overscroll-behavior-y: contain;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus styles */
+input:focus, select:focus, button:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #f59e0b;
+}
+
+input:focus-visible, select:focus-visible, button:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
