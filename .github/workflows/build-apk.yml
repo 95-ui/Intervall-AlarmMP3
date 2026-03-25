@@ -19,6 +19,9 @@ jobs:
       - name: Dependencies installieren
         run: npm install
 
+      - name: Web App builden
+        run: npm run build
+
       - name: Capacitor sync
         run: npx cap sync android
 
