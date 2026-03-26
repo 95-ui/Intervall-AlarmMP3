@@ -5,7 +5,7 @@ import type { AlarmSettings } from "./types";
 import { UNIT_LABELS } from "./types";
 import { startNativeAlarm, stopNativeAlarm } from './nativeAlarm';
 import { saveAudioToFile } from './utils/audio';
-import {
+import { 
   loadSettings,
   saveSettingsToStorage,
   loadAudioBlob,
